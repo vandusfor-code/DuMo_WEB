@@ -1,27 +1,23 @@
 @import "tailwindcss";
 
 :root {
-  --canvas: #f8fafc;
-  --canvas-muted: #f1f5f9;
-  --ink: #0f172a;
-  --ink-muted: #475569;
-  --line: #e2e8f0;
-  --brand: #4f46e5;
-  --brand-deep: #3730a3;
-  --accent: #06b6d4;
-  --success: #059669;
+  --canvas: #f7f7f5;
+  --paper: #ffffff;
+  --ink: #111318;
+  --ink-muted: #5c5f66;
+  --line: #d8d6d0;
+  --brand: #5b5ce2;
+  --brand-soft: #dde1ff;
 }
 
 @theme inline {
   --color-canvas: var(--canvas);
-  --color-canvas-muted: var(--canvas-muted);
+  --color-paper: var(--paper);
   --color-ink: var(--ink);
   --color-ink-muted: var(--ink-muted);
   --color-line: var(--line);
   --color-brand: var(--brand);
-  --color-brand-deep: var(--brand-deep);
-  --color-accent: var(--accent);
-  --color-success: var(--success);
+  --color-brand-soft: var(--brand-soft);
   --font-sans: var(--font-inter);
 }
 
@@ -42,12 +38,12 @@ body {
 }
 
 ::selection {
-  background: color-mix(in srgb, var(--brand) 18%, white);
+  background: var(--brand-soft);
   color: var(--ink);
 }
 
 :focus-visible {
-  outline: 2px solid var(--brand);
+  outline: 2px solid var(--ink);
   outline-offset: 3px;
 }
 
@@ -56,9 +52,8 @@ body {
   left: 1rem;
   top: -3rem;
   z-index: 80;
-  border-radius: 0.5rem;
   background: var(--ink);
-  color: white;
+  color: var(--canvas);
   padding: 0.5rem 0.75rem;
   font-size: 0.875rem;
 }
@@ -67,9 +62,50 @@ body {
   top: 1rem;
 }
 
+.display {
+  font-weight: 550;
+  letter-spacing: -0.048em;
+  line-height: 0.92;
+}
+
+.hairline {
+  background: var(--line);
+}
+
+@keyframes travel-y {
+  0% {
+    top: 0%;
+  }
+  100% {
+    top: calc(100% - 8px);
+  }
+}
+
+@keyframes travel-x {
+  0% {
+    left: 0%;
+  }
+  100% {
+    left: calc(100% - 8px);
+  }
+}
+
+.travel-y {
+  animation: travel-y 7s ease-in-out infinite;
+}
+
+.travel-x {
+  animation: travel-x 8s ease-in-out infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+
+  .travel-y,
+  .travel-x {
+    animation: none;
   }
 
   *,
@@ -78,6 +114,5 @@ body {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
   }
 }

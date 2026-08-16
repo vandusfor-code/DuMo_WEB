@@ -1,8 +1,8 @@
 import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
 
-const steps = [
-  "Lead",
+const path = [
+  "Interés",
   "Contacto",
   "Calificación",
   "Asesoría",
@@ -13,55 +13,45 @@ const steps = [
 
 export function ProblemSection() {
   return (
-    <section className="border-t border-line py-20 sm:py-24">
+    <section className="border-t border-line py-20 sm:py-28">
       <Container>
         <Reveal>
-          <p className="text-[12px] font-medium uppercase tracking-[0.16em] text-ink-muted">
-            El problema
-          </p>
-          <h2 className="mt-4 max-w-[16ch] text-[32px] leading-[1.15] font-semibold tracking-[-0.035em] text-ink sm:text-[42px]">
-            Conseguir un cliente es más que conseguir un lead.
-          </h2>
-          <p className="mt-5 max-w-[58ch] text-base leading-7 text-ink-muted">
-            Generar un prospecto no garantiza una venta. El verdadero valor está
-            en lo que ocurre después de que llega el prospecto: el contacto, la
-            calificación, la asesoría y la activación.
-          </p>
+          <div className="grid gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:items-end">
+            <h2 className="display max-w-[14ch] text-[40px] sm:text-[56px] lg:text-[64px]">
+              Conseguir un lead no significa conseguir un cliente.
+            </h2>
+            <p className="max-w-[38ch] text-[17px] leading-8 text-ink-muted">
+              Un prospecto es solamente el comienzo. Entre el interés y la
+              activación existe todo un proceso comercial.
+            </p>
+          </div>
         </Reveal>
 
-        <Reveal delay={0.1} className="mt-12">
-          <div className="overflow-hidden rounded-2xl border border-line bg-white">
-            <div className="grid grid-cols-2 lg:grid-cols-7">
-              {steps.map((step, index) => {
-                const afterLead = index > 0;
+        <Reveal delay={0.08} className="mt-16 sm:mt-20">
+          <div className="relative">
+            <div className="absolute top-2 right-0 left-0 hidden h-px bg-line md:block" />
+            <span className="travel-x absolute top-[5px] hidden h-2 w-2 rounded-full bg-ink md:block" />
+            <ol className="grid gap-6 md:grid-cols-7 md:gap-3">
+              {path.map((step, index) => {
+                const last = index === path.length - 1;
                 return (
-                  <div
-                    key={step}
-                    className={`relative px-4 py-5 ${
-                      afterLead ? "bg-white" : "bg-canvas-muted"
-                    } ${index < steps.length - 1 ? "border-b border-line lg:border-b-0 lg:border-r" : ""} ${
-                      index % 2 === 0 ? "border-r border-line lg:border-r" : ""
-                    }`}
-                  >
-                    <p className="text-[11px] text-ink-muted">
-                      {String(index + 1).padStart(2, "0")}
+                  <li key={step}>
+                    <span
+                      className={`mb-4 hidden h-1.5 w-1.5 rounded-full md:block ${
+                        last ? "bg-brand" : "bg-ink"
+                      }`}
+                    />
+                    <p
+                      className={`text-[15px] tracking-[-0.02em] ${
+                        last ? "font-medium text-ink" : "text-ink-muted"
+                      }`}
+                    >
+                      {step}
                     </p>
-                    <p className="mt-2 text-sm font-medium text-ink">{step}</p>
-                    {index === 0 ? (
-                      <p className="mt-2 text-[11px] text-ink-muted">El punto de partida</p>
-                    ) : null}
-                    {index === steps.length - 1 ? (
-                      <p className="mt-2 text-[11px] text-brand">El objetivo</p>
-                    ) : null}
-                  </div>
+                  </li>
                 );
               })}
-            </div>
-            <div className="border-t border-line bg-canvas px-5 py-4">
-              <p className="text-sm text-ink">
-                El verdadero valor está en lo que ocurre después de que llega el prospecto.
-              </p>
-            </div>
+            </ol>
           </div>
         </Reveal>
       </Container>

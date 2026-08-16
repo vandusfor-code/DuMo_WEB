@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
-import { Button } from "@/components/ui/Button";
 import { Logo } from "@/components/ui/Logo";
 import { cn } from "@/lib/cn";
 import { NAV_LINKS } from "@/lib/site";
@@ -28,18 +27,16 @@ export function Header() {
   return (
     <header
       className={cn(
-        "sticky top-0 z-50 border-b transition-colors duration-200",
-        scrolled
-          ? "border-line/80 bg-white/85 backdrop-blur-md"
-          : "border-transparent bg-white/70 backdrop-blur-sm",
+        "sticky top-0 z-50 transition-colors duration-200",
+        scrolled ? "bg-canvas/90 backdrop-blur-md" : "bg-transparent",
       )}
     >
-      <div className="mx-auto flex h-16 w-full max-w-[1120px] items-center justify-between px-5 sm:px-6 lg:px-8">
-        <a href="#inicio" className="relative z-10" aria-label="Dumo, ir al inicio">
+      <div className="mx-auto flex h-[72px] w-full max-w-[1320px] items-center justify-between px-6 sm:px-8 lg:px-12">
+        <a href="#inicio" aria-label="Dumo, ir al inicio">
           <Logo />
         </a>
 
-        <nav className="hidden items-center gap-7 md:flex" aria-label="Principal">
+        <nav className="hidden items-center gap-8 lg:flex" aria-label="Principal">
           {NAV_LINKS.map((link) => (
             <a
               key={link.href}
@@ -51,13 +48,16 @@ export function Header() {
           ))}
         </nav>
 
-        <div className="hidden md:block">
-          <Button href="#contacto">Hablar con Dumo</Button>
-        </div>
+        <a
+          href="#contacto"
+          className="hidden text-[13px] font-medium tracking-[-0.02em] text-ink underline-offset-4 hover:underline lg:inline"
+        >
+          Hablar con Dumo
+        </a>
 
         <button
           type="button"
-          className="inline-flex h-10 w-10 items-center justify-center rounded-lg text-ink md:hidden"
+          className="inline-flex h-10 w-10 items-center justify-center text-ink lg:hidden"
           aria-expanded={open}
           aria-controls="mobile-nav"
           aria-label={open ? "Cerrar menú" : "Abrir menú"}
@@ -67,25 +67,24 @@ export function Header() {
         </button>
       </div>
 
+      <div className={cn("hairline h-px w-full", scrolled ? "opacity-100" : "opacity-0")} />
+
       {open ? (
-        <div
-          id="mobile-nav"
-          className="border-t border-line bg-white px-5 py-5 md:hidden"
-        >
-          <nav className="flex flex-col gap-4" aria-label="Móvil">
+        <div id="mobile-nav" className="border-t border-line bg-canvas px-6 py-6 lg:hidden">
+          <nav className="flex flex-col gap-5" aria-label="Móvil">
             {NAV_LINKS.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="text-base text-ink"
+                className="text-lg text-ink"
                 onClick={() => setOpen(false)}
               >
                 {link.label}
               </a>
             ))}
-            <Button href="#contacto" className="mt-2 w-full" onClick={() => setOpen(false)}>
+            <a href="#contacto" className="text-lg text-ink" onClick={() => setOpen(false)}>
               Hablar con Dumo
-            </Button>
+            </a>
           </nav>
         </div>
       ) : null}

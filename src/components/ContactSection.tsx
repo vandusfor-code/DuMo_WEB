@@ -64,46 +64,31 @@ export function ContactSection() {
   }
 
   return (
-    <section id="contacto" className="border-t border-line py-20 sm:py-24">
+    <section id="contacto" className="border-t border-line py-20 sm:py-28">
       <Container>
-        <div className="grid items-start gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
+        <div className="grid gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:gap-24">
           <Reveal>
-            <p className="text-[12px] font-medium uppercase tracking-[0.16em] text-ink-muted">
-              Conversemos
-            </p>
-            <h2 className="mt-4 max-w-[16ch] text-[32px] leading-[1.15] font-semibold tracking-[-0.035em] text-ink sm:text-[42px]">
-              ¿Tienes un producto que necesita más clientes?
+            <h2 className="display max-w-[10ch] text-[48px] sm:text-[68px] lg:text-[76px]">
+              ¿Qué quieres vender?
             </h2>
-            <p className="mt-5 text-base leading-7 text-ink-muted">
-              Cuéntanos qué estás vendiendo, a quién quieres llegar y qué
-              resultado buscas. Diseñemos juntos una operación comercial.
+            <p className="mt-8 max-w-[38ch] text-[17px] leading-8 text-ink-muted">
+              Cuéntanos qué producto tienes, a quién quieres llegar y qué
+              resultado buscas. Diseñemos la operación comercial.
             </p>
-            <div className="mt-10 border-t border-line pt-8">
-              <h3 className="text-xl font-semibold tracking-[-0.03em] text-ink">
-                Hablemos de crecimiento.
-              </h3>
-              <p className="mt-3 max-w-[40ch] text-sm leading-6 text-ink-muted">
-                Si tienes un producto, nosotros podemos ayudarte a construir el
-                camino hacia el cliente.
-              </p>
-              <Button href="#formulario-dumo" variant="secondary" className="mt-5">
-                Contactar a Dumo
-              </Button>
-            </div>
           </Reveal>
 
-          <Reveal delay={0.08}>
+          <Reveal delay={0.06}>
             {state === "success" ? (
-              <div className="rounded-2xl border border-line bg-white p-8">
-                <p className="text-lg font-semibold tracking-[-0.02em] text-ink">
+              <div>
+                <p className="text-[28px] tracking-[-0.03em] text-ink">
                   Recibimos tu mensaje.
                 </p>
-                <p className="mt-3 text-sm leading-6 text-ink-muted">
-                  El equipo de Dumo revisará la información y te contactará para
-                  continuar la conversación.
+                <p className="mt-4 max-w-[40ch] text-[16px] leading-7 text-ink-muted">
+                  El equipo de Dumo revisará la información y continuará la
+                  conversación.
                 </p>
                 <Button
-                  className="mt-6"
+                  className="mt-8"
                   onClick={() => setState("idle")}
                   variant="secondary"
                 >
@@ -111,12 +96,8 @@ export function ContactSection() {
                 </Button>
               </div>
             ) : (
-              <form
-                id="formulario-dumo"
-                onSubmit={onSubmit}
-                className="rounded-2xl border border-line bg-white p-5 sm:p-7"
-              >
-                <div className="grid gap-4 sm:grid-cols-2">
+              <form id="formulario-dumo" onSubmit={onSubmit} className="space-y-6">
+                <div className="grid gap-6 sm:grid-cols-2">
                   <Field label="Nombre" htmlFor="name">
                     <input
                       id="name"
@@ -192,44 +173,36 @@ export function ContactSection() {
                     </select>
                   </Field>
                 </div>
-                <div className="mt-4">
-                  <Field
-                    label="¿Qué producto o servicio quieres comercializar?"
-                    htmlFor="product"
-                  >
-                    <input
-                      id="product"
-                      name="product"
-                      required
-                      value={values.product}
-                      onChange={update("product")}
-                      className={fieldClass}
-                    />
-                  </Field>
-                </div>
-                <div className="mt-4">
-                  <Field label="Mensaje" htmlFor="message">
-                    <textarea
-                      id="message"
-                      name="message"
-                      rows={4}
-                      required
-                      value={values.message}
-                      onChange={update("message")}
-                      className={`${fieldClass} resize-y`}
-                    />
-                  </Field>
-                </div>
+                <Field
+                  label="¿Qué producto o servicio quieres comercializar?"
+                  htmlFor="product"
+                >
+                  <input
+                    id="product"
+                    name="product"
+                    required
+                    value={values.product}
+                    onChange={update("product")}
+                    className={fieldClass}
+                  />
+                </Field>
+                <Field label="Mensaje" htmlFor="message">
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows={4}
+                    required
+                    value={values.message}
+                    onChange={update("message")}
+                    className={`${fieldClass} resize-y`}
+                  />
+                </Field>
                 {state === "error" ? (
-                  <p className="mt-4 text-sm text-red-600" role="alert">
+                  <p className="text-sm text-red-700" role="alert">
                     {error}
                   </p>
                 ) : null}
-                <Button
-                  type="submit"
-                  className="mt-6 w-full sm:w-auto"
-                  disabled={state === "submitting"}
-                >
+                <Button type="submit" disabled={state === "submitting"}>
                   {state === "submitting" ? "Enviando..." : "Hablar con Dumo"}
                 </Button>
               </form>
@@ -242,7 +215,7 @@ export function ContactSection() {
 }
 
 const fieldClass =
-  "mt-1.5 w-full rounded-lg border border-line bg-white px-3 py-2.5 text-sm text-ink transition-colors duration-200 placeholder:text-slate-400 hover:border-slate-300 focus:border-brand";
+  "mt-2 w-full border-0 border-b border-line bg-transparent px-0 py-2.5 text-[15px] text-ink transition-colors duration-200 placeholder:text-ink-muted/50 hover:border-ink/40 focus:border-ink focus:ring-0 focus:outline-none";
 
 function Field({
   label,
@@ -254,7 +227,7 @@ function Field({
   children: React.ReactNode;
 }) {
   return (
-    <label htmlFor={htmlFor} className="block text-[13px] font-medium text-ink">
+    <label htmlFor={htmlFor} className="block text-[13px] text-ink-muted">
       {label}
       {children}
     </label>

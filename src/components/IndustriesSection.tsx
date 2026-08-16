@@ -2,49 +2,46 @@ import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
 
 const industries = [
-  { name: "Telecomunicaciones", note: "Adquisición y portabilidad de servicios." },
-  { name: "Internet y hogar", note: "Servicios para el hogar de alto volumen." },
-  { name: "Servicios financieros", note: "Productos que requieren asesoría y cierre." },
-  { name: "Seguros", note: "Conversación consultiva hasta la contratación." },
-  { name: "Suscripciones", note: "Captación y activación recurrente." },
-  { name: "Servicios digitales", note: "Ofertas que necesitan explicación y conversión." },
-  { name: "Educación", note: "Programas que se venden con acompañamiento." },
-  { name: "Otros servicios", note: "Cualquier oferta de alto volumen comercial." },
+  "Telecomunicaciones",
+  "Internet hogar",
+  "Servicios financieros",
+  "Seguros",
+  "Educación",
+  "Servicios digitales",
+  "Suscripciones",
 ];
 
 export function IndustriesSection() {
   return (
-    <section className="border-t border-line bg-canvas-muted py-20 sm:py-24">
+    <section className="border-t border-line py-20 sm:py-28">
       <Container>
-        <Reveal>
-          <p className="text-[12px] font-medium uppercase tracking-[0.16em] text-ink-muted">
-            Para quién es Dumo
-          </p>
-          <h2 className="mt-4 max-w-[20ch] text-[32px] leading-[1.15] font-semibold tracking-[-0.035em] text-ink sm:text-[42px]">
-            Si tienes un producto que vender, podemos ayudarte a encontrar a quién vendérselo.
-          </h2>
-          <p className="mt-5 max-w-[56ch] text-base leading-7 text-ink-muted">
-            El modelo se aplica a sectores que necesitan adquisición y
-            conversión. No afirmamos experiencia específica donde aún no la
-            tenemos; mostramos dónde el modelo puede operar.
-          </p>
-        </Reveal>
+        <div className="grid gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:gap-24">
+          <Reveal>
+            <h2 className="display max-w-[14ch] text-[36px] sm:text-[48px] lg:text-[52px]">
+              Un modelo comercial que puede adaptarse a distintas industrias.
+            </h2>
+            <p className="mt-7 max-w-[38ch] text-[17px] leading-8 text-ink-muted">
+              El modelo no depende de un operador ni de una categoría. Se
+              aplica donde exista un producto y la necesidad de conseguir
+              clientes.
+            </p>
+          </Reveal>
 
-        <Reveal delay={0.08} className="mt-12">
-          <div className="overflow-hidden rounded-2xl border border-line bg-white">
-            {industries.map((industry, index) => (
-              <div
-                key={industry.name}
-                className={`grid gap-2 px-5 py-4 sm:grid-cols-[220px_1fr] sm:items-baseline ${
-                  index < industries.length - 1 ? "border-b border-line" : ""
-                }`}
-              >
-                <p className="text-sm font-medium text-ink">{industry.name}</p>
-                <p className="text-sm text-ink-muted">{industry.note}</p>
-              </div>
-            ))}
-          </div>
-        </Reveal>
+          <Reveal delay={0.06}>
+            <ul>
+              {industries.map((industry, index) => (
+                <li
+                  key={industry}
+                  className={`py-4 text-[22px] tracking-[-0.03em] sm:text-[26px] ${
+                    index === 0 ? "" : "border-t border-line"
+                  }`}
+                >
+                  {industry}
+                </li>
+              ))}
+            </ul>
+          </Reveal>
+        </div>
       </Container>
     </section>
   );

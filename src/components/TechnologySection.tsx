@@ -1,46 +1,67 @@
 import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
-import { PlatformVisual } from "@/components/visuals/PlatformVisual";
 
-const connections = [
-  "Prospectos",
-  "Asesores",
-  "Conversaciones",
-  "Estados",
-  "Seguimientos",
-  "Campañas",
-  "Ventas",
-  "Operación",
+const capabilities = [
+  "Centralizar prospectos",
+  "Distribuir oportunidades",
+  "Gestionar asesores",
+  "Organizar conversaciones",
+  "Controlar estados",
+  "Realizar seguimiento",
+  "Gestionar campañas",
+  "Controlar resultados",
+];
+
+const log = [
+  ["Prospecto recibido", "Entra a la operación"],
+  ["Oportunidad asignada", "Pasa a un asesor"],
+  ["Conversación en curso", "Se califica la necesidad"],
+  ["Oferta presentada", "Se abre la decisión"],
+  ["Servicio activado", "Existe un cliente"],
 ];
 
 export function TechnologySection() {
   return (
-    <section id="tecnologia" className="border-t border-line py-20 sm:py-24">
+    <section id="tecnologia" className="border-t border-line py-20 sm:py-28">
       <Container>
-        <div className="grid items-start gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16">
+        <div className="grid gap-16 lg:grid-cols-[0.9fr_1.1fr] lg:gap-24">
           <Reveal>
-            <p className="text-[12px] font-medium uppercase tracking-[0.16em] text-ink-muted">
-              Tecnología
-            </p>
-            <h2 className="mt-4 max-w-[14ch] text-[32px] leading-[1.15] font-semibold tracking-[-0.035em] text-ink sm:text-[42px]">
-              Tecnología para convertir cada oportunidad.
+            <h2 className="display max-w-[12ch] text-[40px] sm:text-[52px]">
+              Tecnología para operar cada oportunidad.
             </h2>
-            <p className="mt-5 text-base leading-7 text-ink-muted">
-              Contamos con una plataforma propia para organizar la operación
-              comercial. Centraliza lo que entra, lo que se gestiona y lo que se
-              convierte.
+            <p className="mt-7 max-w-[40ch] text-[17px] leading-8 text-ink-muted">
+              Dumo utiliza tecnología propia para organizar la operación
+              comercial. No es el producto. Es la infraestructura que sostiene
+              el proceso.
             </p>
-            <ul className="mt-8 grid grid-cols-2 gap-x-4 gap-y-3">
-              {connections.map((item) => (
-                <li key={item} className="flex items-center gap-2 text-sm text-ink">
-                  <span className="h-1.5 w-1.5 rounded-full bg-brand" />
+            <ul className="mt-10 space-y-3">
+              {capabilities.map((item) => (
+                <li key={item} className="text-[15px] text-ink">
                   {item}
                 </li>
               ))}
             </ul>
           </Reveal>
-          <Reveal delay={0.1}>
-            <PlatformVisual />
+
+          <Reveal delay={0.08}>
+            <p className="text-[12px] tracking-[0.16em] text-ink-muted uppercase">
+              Representación del flujo operativo
+            </p>
+            <div className="mt-6">
+              <ol>
+                {log.map(([event, meaning], index) => (
+                  <li
+                    key={event}
+                    className={`grid gap-1 py-5 sm:grid-cols-[1fr_1fr] sm:items-baseline ${
+                      index === 0 ? "pt-0" : "border-t border-line"
+                    }`}
+                  >
+                    <p className="text-[16px] tracking-[-0.02em] text-ink">{event}</p>
+                    <p className="text-[14px] text-ink-muted">{meaning}</p>
+                  </li>
+                ))}
+              </ol>
+            </div>
           </Reveal>
         </div>
       </Container>

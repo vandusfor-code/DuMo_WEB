@@ -1,68 +1,59 @@
 import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
 
-const companyProvides = [
+const company = [
   "Producto o servicio",
   "Condiciones comerciales",
   "Criterios de elegibilidad",
   "Proceso de contratación",
-  "Bases de datos, cuando aplique",
+  "Bases de datos, cuando corresponda",
 ];
 
-const dumoProvides = [
+const dumo = [
   "Estrategia",
   "Marketing",
   "Generación de prospectos",
   "Tecnología",
   "Asesores",
-  "Gestión comercial",
   "Seguimiento",
   "Conversión",
-  "Gestión hasta activación",
+  "Activación",
 ];
 
 export function OperatingModel() {
   return (
-    <section className="border-t border-line py-20 sm:py-24">
+    <section className="border-t border-line py-20 sm:py-28">
       <Container>
         <Reveal>
-          <p className="text-[12px] font-medium uppercase tracking-[0.16em] text-ink-muted">
-            Modelo de trabajo
-          </p>
-          <h2 className="mt-4 max-w-[18ch] text-[32px] leading-[1.15] font-semibold tracking-[-0.035em] text-ink sm:text-[42px]">
-            Tú defines el producto. Nosotros construimos la operación comercial.
+          <h2 className="display max-w-[16ch] text-[40px] sm:text-[56px] lg:text-[64px]">
+            Tú tienes el producto. Nosotros construimos el camino hacia el cliente.
           </h2>
-          <p className="mt-5 max-w-[52ch] text-base leading-7 text-ink-muted">
-            Tú tienes el producto. Nosotros conseguimos al cliente.
-          </p>
         </Reveal>
 
-        <Reveal delay={0.08} className="mt-12">
-          <div className="grid overflow-hidden rounded-2xl border border-line bg-white md:grid-cols-2">
-            <div className="border-b border-line p-6 sm:p-8 md:border-r md:border-b-0">
-              <p className="text-[12px] font-medium uppercase tracking-[0.14em] text-ink-muted">
-                La empresa proporciona
-              </p>
-              <ul className="mt-6 space-y-3">
-                {companyProvides.map((item) => (
-                  <li key={item} className="text-sm text-ink">
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="bg-canvas p-6 sm:p-8">
-              <p className="text-[12px] font-medium uppercase tracking-[0.14em] text-brand">
-                Dumo aporta
-              </p>
-              <ul className="mt-6 space-y-3">
-                {dumoProvides.map((item) => (
-                  <li key={item} className="text-sm text-ink">
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
+        <Reveal delay={0.08} className="mt-16 grid gap-12 md:grid-cols-2 md:gap-0">
+          <div className="md:pr-16">
+            <p className="text-[13px] tracking-[0.18em] text-ink-muted uppercase">
+              La empresa aporta
+            </p>
+            <ul className="mt-6 space-y-3">
+              {company.map((item) => (
+                <li key={item} className="text-[17px] text-ink">
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="border-t border-line pt-12 md:border-t-0 md:border-l md:pt-0 md:pl-16">
+            <p className="text-[13px] tracking-[0.18em] text-ink-muted uppercase">
+              Dumo aporta
+            </p>
+            <ul className="mt-6 space-y-3">
+              {dumo.map((item) => (
+                <li key={item} className="text-[17px] text-ink">
+                  {item}
+                </li>
+              ))}
+            </ul>
           </div>
         </Reveal>
       </Container>

@@ -4,46 +4,36 @@ import { Reveal } from "@/components/ui/Reveal";
 const operations = [
   {
     name: "WOM Móvil",
-    status: "Operación actual",
-    description:
-      "Campañas comerciales orientadas a adquisición y portabilidad móvil.",
+    detail: "Campañas comerciales de adquisición y portabilidad móvil.",
   },
   {
     name: "Claro Móvil",
-    status: "Próxima incorporación",
-    description:
-      "Nueva operación comercial próxima a incorporarse al portafolio de campañas.",
+    detail: "Nueva operación comercial próxima a incorporarse.",
   },
 ];
 
 export function CampaignsSection() {
   return (
-    <section id="campanas" className="border-t border-line py-20 sm:py-24">
+    <section id="campanas" className="border-t border-line py-20 sm:py-28">
       <Container>
         <Reveal>
-          <p className="text-[12px] font-medium uppercase tracking-[0.16em] text-ink-muted">
-            Campañas actuales
+          <p className="text-[13px] tracking-[0.18em] text-ink-muted uppercase">
+            Operaciones actuales
           </p>
-          <h2 className="mt-4 max-w-[18ch] text-[32px] leading-[1.15] font-semibold tracking-[-0.035em] text-ink sm:text-[42px]">
-            Operaciones comerciales que ya gestionamos.
+          <h2 className="display mt-5 max-w-[14ch] text-[36px] sm:text-[48px]">
+            Operaciones comerciales actuales.
           </h2>
-          <p className="mt-5 max-w-[54ch] text-base leading-7 text-ink-muted">
-            Estas son las operaciones con las que trabajamos hoy. El modelo de
-            Dumo está diseñado para crecer hacia otras categorías sin cambiar de
-            identidad.
-          </p>
         </Reveal>
 
-        <div className="mt-12 grid gap-4 md:grid-cols-2">
-          {operations.map((operation, index) => (
-            <Reveal key={operation.name} delay={index * 0.06}>
-              <article className="rounded-2xl border border-line bg-white p-6">
-                <p className="text-[12px] text-ink-muted">{operation.status}</p>
-                <h3 className="mt-3 text-2xl font-semibold tracking-[-0.03em] text-ink">
+        <div className="mt-16 space-y-0">
+          {operations.map((operation) => (
+            <Reveal key={operation.name}>
+              <article className="grid gap-3 border-t border-line py-10 md:grid-cols-[minmax(0,0.45fr)_minmax(0,1fr)] md:items-baseline">
+                <h3 className="text-[32px] tracking-[-0.04em] sm:text-[40px]">
                   {operation.name}
                 </h3>
-                <p className="mt-3 max-w-[40ch] text-sm leading-6 text-ink-muted">
-                  {operation.description}
+                <p className="max-w-[42ch] text-[16px] leading-7 text-ink-muted">
+                  {operation.detail}
                 </p>
               </article>
             </Reveal>

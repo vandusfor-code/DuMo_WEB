@@ -14,16 +14,16 @@ export default function OpenGraphImage() {
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
-          background: "#F8FAFC",
+          background: "#F7F7F5",
           padding: "72px",
         }}
       >
         <div
           style={{
             fontSize: 28,
-            fontWeight: 600,
+            fontWeight: 500,
             letterSpacing: "-0.04em",
-            color: "#0F172A",
+            color: "#111318",
           }}
         >
           Dumo
@@ -31,24 +31,26 @@ export default function OpenGraphImage() {
         <div style={{ display: "flex", flexDirection: "column" }}>
           <div
             style={{
-              fontSize: 64,
-              lineHeight: 1.05,
-              fontWeight: 600,
-              letterSpacing: "-0.04em",
-              color: "#0F172A",
-              maxWidth: 820,
+              fontSize: 68,
+              lineHeight: 0.95,
+              fontWeight: 550,
+              letterSpacing: "-0.045em",
+              color: "#111318",
+              maxWidth: 860,
             }}
           >
             Convertimos oportunidades en clientes.
           </div>
           <div
             style={{
-              marginTop: 24,
-              fontSize: 24,
-              color: "#475569",
+              marginTop: 28,
+              fontSize: 22,
+              color: "#5C5F66",
+              letterSpacing: "0.16em",
+              textTransform: "uppercase",
             }}
           >
-            Adquisición y conversión comercial
+            Adquisición · Conversión · Activación
           </div>
         </div>
       </div>

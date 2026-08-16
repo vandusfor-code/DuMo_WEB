@@ -11,11 +11,9 @@ type ButtonProps = {
 };
 
 const variants = {
-  primary:
-    "bg-brand text-white hover:bg-brand-deep shadow-[0_1px_0_rgba(15,23,42,0.06)]",
-  secondary:
-    "bg-white text-ink border border-line hover:border-slate-300 hover:bg-canvas-muted",
-  ghost: "bg-transparent text-ink hover:bg-white/60",
+  primary: "bg-ink text-canvas hover:bg-ink/90",
+  secondary: "text-ink hover:text-ink/70",
+  ghost: "text-ink-muted hover:text-ink",
 };
 
 export function Button({
@@ -28,7 +26,9 @@ export function Button({
   onClick,
 }: ButtonProps) {
   const classes = cn(
-    "inline-flex items-center justify-center rounded-lg px-4 py-2.5 text-sm font-medium tracking-[-0.01em] transition-colors duration-200 disabled:cursor-not-allowed disabled:opacity-60",
+    "inline-flex items-center justify-center text-[15px] font-medium tracking-[-0.02em] transition-colors duration-200 disabled:cursor-not-allowed disabled:opacity-60",
+    variant === "primary" && "h-12 px-6",
+    variant === "secondary" && "h-12 gap-2 underline-offset-[6px] hover:underline",
     variants[variant],
     className,
   );
