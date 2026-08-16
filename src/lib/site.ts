@@ -1,9 +1,9 @@
-export const SITE_NAME = "Dumo";
-export const SITE_TAGLINE = "Adquisición y conversión comercial";
-export const SITE_HEADLINE = "Convertimos oportunidades en clientes.";
+export const SITE_NAME = "DuMo";
+export const SITE_TAGLINE = "Commercial Operating System";
+export const SITE_HEADLINE = "La infraestructura detrás de cada venta.";
 
 export const SITE_DESCRIPTION =
-  "Dumo ayuda a empresas a adquirir nuevos clientes mediante marketing, tecnología y equipos comerciales especializados.";
+  "DuMo conecta leads, conversaciones, IA, asesores y ventas en una sola operación comercial.";
 
 export function getSiteUrl() {
   if (process.env.NEXT_PUBLIC_SITE_URL) {
@@ -22,18 +22,10 @@ export function getSiteUrl() {
 }
 
 export const NAV_LINKS = [
-  { href: "/soluciones", label: "Soluciones" },
-  { href: "/tecnologia", label: "Tecnología" },
-  { href: "/nosotros", label: "Nosotros" },
-  { href: "/contacto", label: "Contacto" },
-] as const;
-
-export const FOOTER_LINKS = [
-  { href: "/", label: "Inicio" },
-  { href: "/soluciones", label: "Soluciones" },
-  { href: "/tecnologia", label: "Tecnología" },
-  { href: "/nosotros", label: "Nosotros" },
-  { href: "/contacto", label: "Contacto" },
+  { href: "/#producto", label: "Producto" },
+  { href: "/#como-funciona", label: "Cómo funciona" },
+  { href: "/#ia", label: "IA" },
+  { href: "/#operacion", label: "Operación" },
 ] as const;
 
 export const CONTACT_EMAIL_PLACEHOLDER = "CONTACT_EMAIL_PLACEHOLDER";

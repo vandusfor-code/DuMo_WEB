@@ -61,8 +61,8 @@ export function ContactForm() {
     return (
       <div>
         <p className="heading text-[28px]">Recibimos tu mensaje.</p>
-        <p className="mt-4 max-w-[40ch] text-[16px] leading-7 text-ink-muted">
-          El equipo de Dumo revisará la información y continuará la conversación.
+        <p className="mt-4 max-w-[40ch] text-[16px] leading-7 text-muted">
+          El equipo de DuMo revisará la información y continuará la conversación.
         </p>
         <Button className="mt-8" onClick={() => setState("idle")} variant="secondary">
           Enviar otro mensaje
@@ -159,7 +159,7 @@ export function ContactForm() {
         </p>
       ) : null}
       <Button type="submit" disabled={state === "submitting"}>
-        {state === "submitting" ? "Enviando..." : "Hablar con Dumo"}
+        {state === "submitting" ? "Enviando..." : "Solicitar demo"}
       </Button>
     </form>
   );
@@ -178,7 +178,7 @@ function Field({
   children: React.ReactNode;
 }) {
   return (
-    <label htmlFor={htmlFor} className="block text-[13px] text-ink-muted">
+    <label htmlFor={htmlFor} className="block text-[13px] text-muted">
       {label}
       {children}
     </label>

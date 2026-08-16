@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "Dumo | Convertimos oportunidades en clientes.";
+export const alt = "DuMo | La infraestructura detrás de cada venta";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -14,33 +14,23 @@ export default function OpenGraphImage() {
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
-          background: "#F7F7F5",
+          background: "#050505",
           padding: "72px",
         }}
       >
+        <div style={{ fontSize: 28, color: "#F5F7F6", letterSpacing: "-0.04em" }}>
+          DuMo
+        </div>
         <div
           style={{
-            fontSize: 28,
-            fontWeight: 500,
-            letterSpacing: "-0.04em",
-            color: "#0D0F12",
+            fontSize: 64,
+            lineHeight: 0.95,
+            color: "#F5F7F6",
+            letterSpacing: "-0.05em",
+            maxWidth: 860,
           }}
         >
-          Dumo
-        </div>
-        <div style={{ display: "flex", flexDirection: "column" }}>
-          <div
-            style={{
-              fontSize: 72,
-              lineHeight: 0.9,
-              fontWeight: 540,
-              letterSpacing: "-0.05em",
-              color: "#0D0F12",
-              maxWidth: 860,
-            }}
-          >
-            Convertimos oportunidades en clientes.
-          </div>
+          La infraestructura detrás de cada venta.
         </div>
       </div>
     ),

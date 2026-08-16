@@ -12,9 +12,10 @@ type ButtonProps = {
 };
 
 const variants = {
-  primary: "bg-brand text-white hover:bg-[#4b4cd4]",
-  secondary: "text-ink hover:text-ink/65",
-  ghost: "text-ink-muted hover:text-ink",
+  primary: "bg-lime text-bg hover:bg-[#d6ff6a]",
+  secondary:
+    "border border-line bg-transparent text-ink hover:border-muted hover:bg-surface",
+  ghost: "text-muted hover:text-ink",
 };
 
 export function Button({
@@ -27,15 +28,13 @@ export function Button({
   onClick,
 }: ButtonProps) {
   const classes = cn(
-    "inline-flex items-center justify-center text-[15px] font-medium tracking-[-0.02em] transition-colors duration-200 disabled:cursor-not-allowed disabled:opacity-60",
-    variant === "primary" && "h-12 px-6",
-    variant === "secondary" && "h-12 underline-offset-[6px] hover:underline",
+    "inline-flex h-10 items-center justify-center rounded-xl px-4 text-[14px] font-medium tracking-[-0.02em] transition-colors duration-200 disabled:cursor-not-allowed disabled:opacity-60",
     variants[variant],
     className,
   );
 
   if (href) {
-    if (href.startsWith("/")) {
+    if (href.startsWith("/") || href.startsWith("#")) {
       return (
         <Link href={href} className={classes} onClick={onClick}>
           {children}
