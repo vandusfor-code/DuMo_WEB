@@ -1,40 +1,19 @@
-import { CampaignsSection } from "@/components/CampaignsSection";
-import { ContactSection } from "@/components/ContactSection";
-import { DifferentiatorSection } from "@/components/DifferentiatorSection";
-import { DumoSystem } from "@/components/DumoSystem";
-import { Footer } from "@/components/Footer";
-import { Header } from "@/components/Header";
-import { Hero } from "@/components/Hero";
-import { IndustriesSection } from "@/components/IndustriesSection";
-import { OperatingModel } from "@/components/OperatingModel";
-import { OperationSection } from "@/components/OperationSection";
-import { OperationStatement } from "@/components/OperationStatement";
-import { ProblemSection } from "@/components/ProblemSection";
-import { TeamSection } from "@/components/TeamSection";
-import { TechnologySection } from "@/components/TechnologySection";
+import { HomeCampaigns } from "@/components/home/Campaigns";
+import { HomeClose } from "@/components/home/Close";
+import { HomeHero } from "@/components/home/Hero";
+import { HomeOperation } from "@/components/home/Operation";
+import { HomeProblem } from "@/components/home/Problem";
+import { HomeStatement } from "@/components/home/Statement";
 
 export default function Home() {
   return (
-    <>
-      <a href="#contenido" className="skip-link">
-        Saltar al contenido
-      </a>
-      <Header />
-      <main id="contenido">
-        <Hero />
-        <ProblemSection />
-        <OperationStatement />
-        <DumoSystem />
-        <OperationSection />
-        <TechnologySection />
-        <TeamSection />
-        <CampaignsSection />
-        <IndustriesSection />
-        <OperatingModel />
-        <DifferentiatorSection />
-        <ContactSection />
-      </main>
-      <Footer />
-    </>
+    <main>
+      <HomeHero />
+      <HomeProblem />
+      <HomeStatement />
+      <HomeOperation />
+      <HomeCampaigns />
+      <HomeClose />
+    </main>
   );
 }

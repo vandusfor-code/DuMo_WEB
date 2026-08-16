@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { Footer } from "@/components/Footer";
+import { Header } from "@/components/Header";
 import { getSiteUrl, SITE_DESCRIPTION, SITE_NAME } from "@/lib/site";
 import "./globals.css";
 
@@ -27,7 +29,6 @@ export const metadata: Metadata = {
     "generación de clientes",
     "servicios comerciales",
     "operación comercial",
-    "contact center comercial",
   ],
   authors: [{ name: SITE_NAME }],
   creator: SITE_NAME,
@@ -36,26 +37,32 @@ export const metadata: Metadata = {
     locale: "es_CO",
     siteName: SITE_NAME,
     title: "Dumo | Adquisición y conversión comercial",
-    description: SITE_DESCRIPTION,
+    description: "Convertimos oportunidades en clientes.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Dumo | Adquisición y conversión comercial",
-    description: SITE_DESCRIPTION,
+    description: "Convertimos oportunidades en clientes.",
   },
   robots: {
     index: true,
     follow: true,
-  },
-  alternates: {
-    canonical: "/",
   },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="es" className={`${inter.variable} h-full antialiased`}>
-      <body className="min-h-full bg-canvas font-sans text-ink">{children}</body>
+      <body className="flex min-h-full flex-col bg-canvas font-sans text-ink">
+        <a href="#contenido" className="skip-link">
+          Saltar al contenido
+        </a>
+        <Header />
+        <div className="flex-1" id="contenido">
+          {children}
+        </div>
+        <Footer />
+      </body>
     </html>
   );
 }

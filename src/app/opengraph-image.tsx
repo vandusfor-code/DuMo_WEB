@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "Dumo | Adquisición y conversión comercial";
+export const alt = "Dumo | Convertimos oportunidades en clientes.";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -14,7 +14,7 @@ export default function OpenGraphImage() {
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
-          background: "#F5F5F2",
+          background: "#F7F7F5",
           padding: "72px",
         }}
       >
@@ -40,17 +40,6 @@ export default function OpenGraphImage() {
             }}
           >
             Convertimos oportunidades en clientes.
-          </div>
-          <div
-            style={{
-              marginTop: 28,
-              fontSize: 18,
-              color: "#5E6168",
-              letterSpacing: "0.22em",
-              textTransform: "uppercase",
-            }}
-          >
-            Adquisición · Conversión · Activación
           </div>
         </div>
       </div>

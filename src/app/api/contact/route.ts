@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { CONTACT_EMAIL_PLACEHOLDER, NEED_OPTIONS } from "@/lib/site";
+import { CONTACT_EMAIL_PLACEHOLDER } from "@/lib/site";
 
 type ContactPayload = {
   name?: string;
@@ -8,7 +8,6 @@ type ContactPayload = {
   email?: string;
   phone?: string;
   product?: string;
-  need?: string;
   message?: string;
 };
 
@@ -29,10 +28,9 @@ export async function POST(request: Request) {
   const email = body.email?.trim() ?? "";
   const phone = body.phone?.trim() ?? "";
   const product = body.product?.trim() ?? "";
-  const need = body.need?.trim() ?? "";
   const message = body.message?.trim() ?? "";
 
-  if (!name || !company || !role || !email || !phone || !product || !need || !message) {
+  if (!name || !company || !role || !email || !phone || !product || !message) {
     return NextResponse.json(
       { error: "Completa todos los campos del formulario." },
       { status: 400 },
@@ -40,20 +38,9 @@ export async function POST(request: Request) {
   }
 
   if (!emailPattern.test(email)) {
-    return NextResponse.json(
-      { error: "Ingresa un correo corporativo válido." },
-      { status: 400 },
-    );
+    return NextResponse.json({ error: "Ingresa un correo válido." }, { status: 400 });
   }
 
-  if (!NEED_OPTIONS.includes(need as (typeof NEED_OPTIONS)[number])) {
-    return NextResponse.json(
-      { error: "Selecciona una necesidad válida." },
-      { status: 400 },
-    );
-  }
-
-  // Destination is intentionally a placeholder until a corporate inbox exists.
   const destination = process.env.CONTACT_EMAIL ?? CONTACT_EMAIL_PLACEHOLDER;
 
   console.info("[dumo-contact]", {
@@ -64,7 +51,6 @@ export async function POST(request: Request) {
     email,
     phone,
     product,
-    need,
     message,
   });
 

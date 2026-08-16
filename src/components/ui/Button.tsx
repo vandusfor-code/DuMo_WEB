@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { cn } from "@/lib/cn";
 
 type ButtonProps = {
@@ -34,6 +35,14 @@ export function Button({
   );
 
   if (href) {
+    if (href.startsWith("/")) {
+      return (
+        <Link href={href} className={classes} onClick={onClick}>
+          {children}
+        </Link>
+      );
+    }
+
     return (
       <a href={href} className={classes} onClick={onClick}>
         {children}
