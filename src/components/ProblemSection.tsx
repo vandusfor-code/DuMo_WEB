@@ -1,49 +1,38 @@
-import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
 
-const path = [
-  "Interés",
-  "Contacto",
-  "Calificación",
-  "Asesoría",
-  "Oferta",
-  "Conversión",
-  "Activación",
-];
+const path = ["Interés", "Contacto", "Asesoría", "Oferta", "Conversión", "Activación"];
 
 export function ProblemSection() {
   return (
-    <section className="border-t border-line py-20 sm:py-28">
-      <Container>
+    <section className="px-6 pt-28 pb-10 sm:px-8 sm:pt-40 lg:px-14 lg:pt-48">
+      <div className="mx-auto w-full max-w-[1440px]">
         <Reveal>
-          <div className="grid gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:items-end">
-            <h2 className="display max-w-[14ch] text-[40px] sm:text-[56px] lg:text-[64px]">
-              Conseguir un lead no significa conseguir un cliente.
-            </h2>
-            <p className="max-w-[38ch] text-[17px] leading-8 text-ink-muted">
-              Un prospecto es solamente el comienzo. Entre el interés y la
-              activación existe todo un proceso comercial.
-            </p>
-          </div>
+          <p className="text-[11px] tracking-[0.28em] text-ink-muted uppercase">
+            El problema
+          </p>
+          <h2 className="display mt-8 max-w-[10ch] text-[56px] sm:text-[80px] lg:text-[96px]">
+            Un lead no es un cliente.
+          </h2>
+          <p className="mt-8 text-[20px] tracking-[-0.02em] text-ink-muted sm:text-[24px]">
+            Es solamente el comienzo.
+          </p>
         </Reveal>
-
-        <Reveal delay={0.08} className="mt-16 sm:mt-20">
+        <Reveal delay={0.1} className="mt-20 sm:mt-28">
           <div className="relative">
-            <div className="absolute top-2 right-0 left-0 hidden h-px bg-line md:block" />
-            <span className="travel-x absolute top-[5px] hidden h-2 w-2 rounded-full bg-ink md:block" />
-            <ol className="grid gap-6 md:grid-cols-7 md:gap-3">
+            <div className="absolute top-[7px] right-0 left-0 hidden h-px bg-ink/15 md:block" />
+            <ol className="flex flex-col gap-5 md:flex-row md:justify-between">
               {path.map((step, index) => {
                 const last = index === path.length - 1;
                 return (
-                  <li key={step}>
+                  <li key={step} className="relative">
                     <span
-                      className={`mb-4 hidden h-1.5 w-1.5 rounded-full md:block ${
+                      className={`mb-4 hidden h-2 w-2 rounded-full md:block ${
                         last ? "bg-brand" : "bg-ink"
                       }`}
                     />
                     <p
-                      className={`text-[15px] tracking-[-0.02em] ${
-                        last ? "font-medium text-ink" : "text-ink-muted"
+                      className={`text-[13px] tracking-[0.18em] uppercase ${
+                        last ? "text-ink" : "text-ink-muted"
                       }`}
                     >
                       {step}
@@ -54,7 +43,7 @@ export function ProblemSection() {
             </ol>
           </div>
         </Reveal>
-      </Container>
+      </div>
     </section>
   );
 }

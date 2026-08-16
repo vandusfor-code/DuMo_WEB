@@ -8,6 +8,7 @@ import { Hero } from "@/components/Hero";
 import { IndustriesSection } from "@/components/IndustriesSection";
 import { OperatingModel } from "@/components/OperatingModel";
 import { OperationSection } from "@/components/OperationSection";
+import { OperationStatement } from "@/components/OperationStatement";
 import { ProblemSection } from "@/components/ProblemSection";
 import { TeamSection } from "@/components/TeamSection";
 import { TechnologySection } from "@/components/TechnologySection";
@@ -22,6 +23,7 @@ export default function Home() {
       <main id="contenido">
         <Hero />
         <ProblemSection />
+        <OperationStatement />
         <DumoSystem />
         <OperationSection />
         <TechnologySection />

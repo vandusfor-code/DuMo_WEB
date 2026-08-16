@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { Button } from "@/components/ui/Button";
-import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
 import { NEED_OPTIONS } from "@/lib/site";
 
@@ -64,16 +63,16 @@ export function ContactSection() {
   }
 
   return (
-    <section id="contacto" className="border-t border-line py-20 sm:py-28">
-      <Container>
-        <div className="grid gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:gap-24">
+    <section id="contacto" className="px-6 py-24 sm:px-8 sm:py-32 lg:px-14">
+      <div className="mx-auto w-full max-w-[1440px]">
+        <div className="grid gap-16 lg:grid-cols-[0.85fr_1.15fr] lg:gap-24">
           <Reveal>
-            <h2 className="display max-w-[10ch] text-[48px] sm:text-[68px] lg:text-[76px]">
+            <h2 className="display max-w-[9ch] text-[52px] sm:text-[76px] lg:text-[88px]">
               ¿Qué quieres vender?
             </h2>
-            <p className="mt-8 max-w-[38ch] text-[17px] leading-8 text-ink-muted">
+            <p className="mt-8 max-w-[34ch] text-[17px] leading-8 text-ink-muted">
               Cuéntanos qué producto tienes, a quién quieres llegar y qué
-              resultado buscas. Diseñemos la operación comercial.
+              resultado buscas.
             </p>
           </Reveal>
 
@@ -209,7 +208,7 @@ export function ContactSection() {
             )}
           </Reveal>
         </div>
-      </Container>
+      </div>
     </section>
   );
 }

@@ -14,7 +14,7 @@ export default function OpenGraphImage() {
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
-          background: "#F7F7F5",
+          background: "#F5F5F2",
           padding: "72px",
         }}
       >
@@ -23,7 +23,7 @@ export default function OpenGraphImage() {
             fontSize: 28,
             fontWeight: 500,
             letterSpacing: "-0.04em",
-            color: "#111318",
+            color: "#0D0F12",
           }}
         >
           Dumo
@@ -31,11 +31,11 @@ export default function OpenGraphImage() {
         <div style={{ display: "flex", flexDirection: "column" }}>
           <div
             style={{
-              fontSize: 68,
-              lineHeight: 0.95,
-              fontWeight: 550,
-              letterSpacing: "-0.045em",
-              color: "#111318",
+              fontSize: 72,
+              lineHeight: 0.9,
+              fontWeight: 540,
+              letterSpacing: "-0.05em",
+              color: "#0D0F12",
               maxWidth: 860,
             }}
           >
@@ -44,9 +44,9 @@ export default function OpenGraphImage() {
           <div
             style={{
               marginTop: 28,
-              fontSize: 22,
-              color: "#5C5F66",
-              letterSpacing: "0.16em",
+              fontSize: 18,
+              color: "#5E6168",
+              letterSpacing: "0.22em",
               textTransform: "uppercase",
             }}
           >

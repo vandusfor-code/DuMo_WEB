@@ -1,11 +1,12 @@
 @import "tailwindcss";
 
 :root {
-  --canvas: #f7f7f5;
+  --canvas: #f5f5f2;
   --paper: #ffffff;
-  --ink: #111318;
-  --ink-muted: #5c5f66;
-  --line: #d8d6d0;
+  --ink: #0d0f12;
+  --graphite: #171a1f;
+  --ink-muted: #5e6168;
+  --line: #d4d2cb;
   --brand: #5b5ce2;
   --brand-soft: #dde1ff;
 }
@@ -14,6 +15,7 @@
   --color-canvas: var(--canvas);
   --color-paper: var(--paper);
   --color-ink: var(--ink);
+  --color-graphite: var(--graphite);
   --color-ink-muted: var(--ink-muted);
   --color-line: var(--line);
   --color-brand: var(--brand);
@@ -63,39 +65,37 @@ body {
 }
 
 .display {
-  font-weight: 550;
-  letter-spacing: -0.048em;
-  line-height: 0.92;
+  font-weight: 540;
+  letter-spacing: -0.052em;
+  line-height: 0.9;
 }
 
-.hairline {
-  background: var(--line);
+.industry-row {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  padding: 0.85rem 0;
+  transition:
+    font-weight 200ms ease,
+    letter-spacing 200ms ease,
+    transform 200ms ease;
 }
 
-@keyframes travel-y {
-  0% {
-    top: 0%;
-  }
-  100% {
-    top: calc(100% - 8px);
-  }
+.industry-row:hover {
+  font-weight: 560;
+  letter-spacing: -0.04em;
+  transform: translateX(8px);
 }
 
-@keyframes travel-x {
-  0% {
-    left: 0%;
-  }
-  100% {
-    left: calc(100% - 8px);
-  }
+.industry-row .mark {
+  width: 0;
+  height: 1px;
+  background: var(--brand);
+  transition: width 200ms ease;
 }
 
-.travel-y {
-  animation: travel-y 7s ease-in-out infinite;
-}
-
-.travel-x {
-  animation: travel-x 8s ease-in-out infinite;
+.industry-row:hover .mark {
+  width: 2.5rem;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -103,9 +103,8 @@ body {
     scroll-behavior: auto;
   }
 
-  .travel-y,
-  .travel-x {
-    animation: none;
+  .industry-row {
+    transition: none;
   }
 
   *,

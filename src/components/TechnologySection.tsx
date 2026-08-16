@@ -1,70 +1,62 @@
-import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
-
-const capabilities = [
-  "Centralizar prospectos",
-  "Distribuir oportunidades",
-  "Gestionar asesores",
-  "Organizar conversaciones",
-  "Controlar estados",
-  "Realizar seguimiento",
-  "Gestionar campañas",
-  "Controlar resultados",
-];
-
-const log = [
-  ["Prospecto recibido", "Entra a la operación"],
-  ["Oportunidad asignada", "Pasa a un asesor"],
-  ["Conversación en curso", "Se califica la necesidad"],
-  ["Oferta presentada", "Se abre la decisión"],
-  ["Servicio activado", "Existe un cliente"],
-];
 
 export function TechnologySection() {
   return (
-    <section id="tecnologia" className="border-t border-line py-20 sm:py-28">
-      <Container>
-        <div className="grid gap-16 lg:grid-cols-[0.9fr_1.1fr] lg:gap-24">
-          <Reveal>
-            <h2 className="display max-w-[12ch] text-[40px] sm:text-[52px]">
-              Tecnología para operar cada oportunidad.
-            </h2>
-            <p className="mt-7 max-w-[40ch] text-[17px] leading-8 text-ink-muted">
-              Dumo utiliza tecnología propia para organizar la operación
-              comercial. No es el producto. Es la infraestructura que sostiene
-              el proceso.
+    <section id="tecnologia" className="px-6 py-24 sm:px-8 sm:py-32 lg:px-14">
+      <div className="mx-auto w-full max-w-[1440px]">
+        <Reveal>
+          <h2 className="display max-w-[13ch] text-[40px] sm:text-[58px] lg:text-[72px]">
+            Tecnología que sostiene la operación.
+          </h2>
+          <p className="mt-8 max-w-[46ch] text-[17px] leading-8 text-ink-muted">
+            Organiza prospectos, distribuye oportunidades, gestiona asesores,
+            controla estados y sigue cada etapa. No es el producto. Es la
+            infraestructura.
+          </p>
+        </Reveal>
+
+        <div className="relative mt-20 grid gap-16 lg:mt-28 lg:grid-cols-12 lg:gap-8">
+          <Reveal className="lg:col-span-5 lg:pt-10">
+            <p className="text-[12px] tracking-[0.2em] text-ink-muted uppercase">
+              Prospecto
             </p>
-            <ul className="mt-10 space-y-3">
-              {capabilities.map((item) => (
-                <li key={item} className="text-[15px] text-ink">
-                  {item}
-                </li>
-              ))}
-            </ul>
+            <p className="mt-4 text-[28px] tracking-[-0.035em]">A. Restrepo</p>
+            <p className="mt-2 text-[15px] text-ink-muted">Entra a la operación</p>
           </Reveal>
 
-          <Reveal delay={0.08}>
-            <p className="text-[12px] tracking-[0.16em] text-ink-muted uppercase">
-              Representación del flujo operativo
+          <Reveal delay={0.06} className="lg:col-span-4 lg:col-start-8">
+            <p className="text-[12px] tracking-[0.2em] text-ink-muted uppercase">
+              Asignación
             </p>
-            <div className="mt-6">
-              <ol>
-                {log.map(([event, meaning], index) => (
-                  <li
-                    key={event}
-                    className={`grid gap-1 py-5 sm:grid-cols-[1fr_1fr] sm:items-baseline ${
-                      index === 0 ? "pt-0" : "border-t border-line"
-                    }`}
-                  >
-                    <p className="text-[16px] tracking-[-0.02em] text-ink">{event}</p>
-                    <p className="text-[14px] text-ink-muted">{meaning}</p>
-                  </li>
-                ))}
-              </ol>
-            </div>
+            <p className="mt-4 text-[28px] tracking-[-0.035em]">CM</p>
+            <p className="mt-2 text-[15px] text-ink-muted">La oportunidad cambia de manos</p>
+          </Reveal>
+
+          <Reveal delay={0.08} className="lg:col-span-6 lg:col-start-3">
+            <p className="text-[12px] tracking-[0.2em] text-ink-muted uppercase">
+              Conversación
+            </p>
+            <p className="mt-5 max-w-[36ch] text-[18px] leading-8 text-ink-muted">
+              Necesito entender si el servicio aplica.
+            </p>
+            <p className="mt-4 max-w-[36ch] text-[18px] leading-8 text-ink">
+              Revisamos elegibilidad y presentamos la oferta.
+            </p>
+          </Reveal>
+
+          <Reveal delay={0.1} className="lg:col-span-4">
+            <p className="text-[12px] tracking-[0.2em] text-ink-muted uppercase">
+              Actividad
+            </p>
+            <p className="mt-4 text-[22px] tracking-[-0.03em]">Oferta presentada</p>
+          </Reveal>
+
+          <Reveal delay={0.12} className="lg:col-span-4 lg:col-start-9 lg:text-right">
+            <p className="text-[12px] tracking-[0.2em] text-brand uppercase">Venta</p>
+            <p className="mt-4 text-[28px] tracking-[-0.035em]">Servicio activado</p>
           </Reveal>
         </div>
-      </Container>
+      </div>
     </section>
   );
 }

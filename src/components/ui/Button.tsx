@@ -11,8 +11,8 @@ type ButtonProps = {
 };
 
 const variants = {
-  primary: "bg-ink text-canvas hover:bg-ink/90",
-  secondary: "text-ink hover:text-ink/70",
+  primary: "bg-brand text-white hover:bg-[#4b4cd4]",
+  secondary: "text-ink hover:text-ink/65",
   ghost: "text-ink-muted hover:text-ink",
 };
 
@@ -28,7 +28,7 @@ export function Button({
   const classes = cn(
     "inline-flex items-center justify-center text-[15px] font-medium tracking-[-0.02em] transition-colors duration-200 disabled:cursor-not-allowed disabled:opacity-60",
     variant === "primary" && "h-12 px-6",
-    variant === "secondary" && "h-12 gap-2 underline-offset-[6px] hover:underline",
+    variant === "secondary" && "h-12 underline-offset-[6px] hover:underline",
     variants[variant],
     className,
   );

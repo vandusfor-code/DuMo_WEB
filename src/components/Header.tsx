@@ -28,15 +28,14 @@ export function Header() {
     <header
       className={cn(
         "sticky top-0 z-50 transition-colors duration-200",
-        scrolled ? "bg-canvas/90 backdrop-blur-md" : "bg-transparent",
+        scrolled ? "bg-canvas/88 backdrop-blur-md" : "bg-transparent",
       )}
     >
-      <div className="mx-auto flex h-[72px] w-full max-w-[1320px] items-center justify-between px-6 sm:px-8 lg:px-12">
+      <div className="mx-auto flex h-[76px] w-full max-w-[1440px] items-center justify-between px-6 sm:px-8 lg:px-14">
         <a href="#inicio" aria-label="Dumo, ir al inicio">
           <Logo />
         </a>
-
-        <nav className="hidden items-center gap-8 lg:flex" aria-label="Principal">
+        <nav className="hidden items-center gap-9 lg:flex" aria-label="Principal">
           {NAV_LINKS.map((link) => (
             <a
               key={link.href}
@@ -47,14 +46,12 @@ export function Header() {
             </a>
           ))}
         </nav>
-
         <a
           href="#contacto"
-          className="hidden text-[13px] font-medium tracking-[-0.02em] text-ink underline-offset-4 hover:underline lg:inline"
+          className="hidden text-[13px] font-medium tracking-[-0.02em] text-brand lg:inline"
         >
           Hablar con Dumo
         </a>
-
         <button
           type="button"
           className="inline-flex h-10 w-10 items-center justify-center text-ink lg:hidden"
@@ -66,23 +63,24 @@ export function Header() {
           {open ? <X size={20} /> : <Menu size={20} />}
         </button>
       </div>
-
-      <div className={cn("hairline h-px w-full", scrolled ? "opacity-100" : "opacity-0")} />
-
       {open ? (
-        <div id="mobile-nav" className="border-t border-line bg-canvas px-6 py-6 lg:hidden">
+        <div id="mobile-nav" className="bg-canvas px-6 py-8 lg:hidden">
           <nav className="flex flex-col gap-5" aria-label="Móvil">
             {NAV_LINKS.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="text-lg text-ink"
+                className="text-xl tracking-[-0.03em]"
                 onClick={() => setOpen(false)}
               >
                 {link.label}
               </a>
             ))}
-            <a href="#contacto" className="text-lg text-ink" onClick={() => setOpen(false)}>
+            <a
+              href="#contacto"
+              className="text-xl tracking-[-0.03em] text-brand"
+              onClick={() => setOpen(false)}
+            >
               Hablar con Dumo
             </a>
           </nav>

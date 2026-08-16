@@ -1,46 +1,73 @@
-import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
 
-const roster = [
-  { mark: "CM", action: "Conversación" },
-  { mark: "DR", action: "Seguimiento" },
-  { mark: "LV", action: "Oferta" },
-  { mark: "JP", action: "Activación" },
+const nodes = [
+  { mark: "CM", action: "Conversación", x: "8%", y: "12%" },
+  { mark: "DR", action: "Seguimiento", x: "62%", y: "8%" },
+  { mark: "LV", action: "Oferta", x: "18%", y: "58%" },
+  { mark: "JP", action: "Activación", x: "70%", y: "62%" },
 ];
 
 export function TeamSection() {
   return (
-    <section className="border-t border-line py-20 sm:py-28">
-      <Container>
+    <section className="px-6 py-24 sm:px-8 sm:py-32 lg:px-14">
+      <div className="mx-auto w-full max-w-[1440px]">
         <Reveal>
-          <h2 className="display max-w-[13ch] text-[40px] sm:text-[58px] lg:text-[68px]">
+          <h2 className="display max-w-[12ch] text-[42px] sm:text-[64px] lg:text-[80px]">
             La tecnología organiza. Las personas convierten.
           </h2>
-          <p className="mt-8 max-w-[46ch] text-[17px] leading-8 text-ink-muted">
-            Dumo cuenta con asesores comerciales especializados. Reciben
-            oportunidades, sostienen la conversación y acompañan hasta la
-            contratación.
-          </p>
         </Reveal>
 
-        <Reveal delay={0.08} className="mt-16 sm:mt-20">
-          <div className="grid gap-10 border-t border-line pt-10 md:grid-cols-4">
-            {roster.map((advisor) => (
-              <div key={advisor.mark} className="relative">
-                <p className="text-[13px] tracking-[0.16em] text-ink-muted">
-                  {advisor.mark}
-                </p>
-                <div className="mt-4 mb-4 h-px w-full bg-line" />
-                <p className="text-[18px] tracking-[-0.02em] text-ink">{advisor.action}</p>
+        <Reveal delay={0.08} className="relative mt-16 min-h-[420px] sm:mt-24 lg:min-h-[520px]">
+          <svg
+            className="pointer-events-none absolute inset-0 hidden h-full w-full lg:block"
+            viewBox="0 0 1000 520"
+            fill="none"
+            aria-hidden="true"
+          >
+            <path
+              d="M140 90 C 280 70 420 180 500 240 C 580 300 620 80 720 70"
+              stroke="#0D0F12"
+              strokeOpacity="0.16"
+              strokeWidth="1.2"
+            />
+            <path
+              d="M500 240 C 360 300 280 360 220 360"
+              stroke="#0D0F12"
+              strokeOpacity="0.16"
+              strokeWidth="1.2"
+            />
+            <path
+              d="M500 240 C 640 320 700 380 780 390"
+              stroke="#0D0F12"
+              strokeOpacity="0.16"
+              strokeWidth="1.2"
+            />
+            <circle cx="500" cy="240" r="4" fill="#5B5CE2" />
+          </svg>
+
+          <div className="grid gap-12 sm:grid-cols-2 lg:hidden">
+            {nodes.map((node) => (
+              <div key={node.mark}>
+                <p className="text-[13px] tracking-[0.2em] text-ink-muted">{node.mark}</p>
+                <p className="mt-2 text-[28px] tracking-[-0.035em]">{node.action}</p>
               </div>
             ))}
           </div>
-          <p className="mt-10 max-w-[42ch] text-[14px] leading-7 text-ink-muted">
-            Representación conceptual del equipo en operación: asignación,
-            conversación y avance hacia el cliente.
-          </p>
+
+          <div className="hidden lg:block">
+            {nodes.map((node) => (
+              <div
+                key={node.mark}
+                className="absolute"
+                style={{ left: node.x, top: node.y }}
+              >
+                <p className="text-[13px] tracking-[0.2em] text-ink-muted">{node.mark}</p>
+                <p className="mt-2 text-[32px] tracking-[-0.04em]">{node.action}</p>
+              </div>
+            ))}
+          </div>
         </Reveal>
-      </Container>
+      </div>
     </section>
   );
 }

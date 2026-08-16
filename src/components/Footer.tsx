@@ -3,11 +3,11 @@ import { FOOTER_LINKS } from "@/lib/site";
 
 export function Footer() {
   return (
-    <footer className="border-t border-line">
-      <div className="mx-auto flex w-full max-w-[1320px] flex-col gap-10 px-6 py-12 sm:px-8 lg:flex-row lg:items-start lg:justify-between lg:px-12">
+    <footer className="px-6 pb-10 sm:px-8 lg:px-14">
+      <div className="mx-auto flex w-full max-w-[1440px] flex-col gap-10 pt-6 sm:flex-row sm:items-end sm:justify-between">
         <div>
           <Logo />
-          <p className="mt-3 max-w-[24ch] text-[14px] text-ink-muted">
+          <p className="mt-3 text-[14px] text-ink-muted">
             Adquisición y conversión comercial.
           </p>
         </div>
@@ -23,12 +23,10 @@ export function Footer() {
           ))}
         </nav>
       </div>
-      <div className="border-t border-line">
-        <div className="mx-auto w-full max-w-[1320px] px-6 py-5 sm:px-8 lg:px-12">
-          <p className="text-[13px] text-ink-muted">
-            © 2026 Dumo. Todos los derechos reservados.
-          </p>
-        </div>
+      <div className="mx-auto mt-12 w-full max-w-[1440px]">
+        <p className="text-[13px] text-ink-muted">
+          © 2026 Dumo. Todos los derechos reservados.
+        </p>
       </div>
     </footer>
   );

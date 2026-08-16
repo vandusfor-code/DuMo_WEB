@@ -1,19 +1,20 @@
-import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
 
 export function DifferentiatorSection() {
   return (
     <section className="bg-ink text-canvas">
-      <Container className="py-24 sm:py-32 lg:py-40">
+      <div className="mx-auto flex min-h-[90svh] w-full max-w-[1440px] flex-col justify-center px-6 py-28 sm:px-8 lg:px-14">
         <Reveal>
-          <p className="max-w-[16ch] text-[28px] leading-[1.15] tracking-[-0.035em] text-white/55 sm:text-[36px]">
+          <p className="display max-w-[10ch] text-[48px] text-white/40 sm:text-[72px] lg:text-[88px]">
             No entregamos simplemente leads.
           </p>
-          <p className="display mt-6 max-w-[12ch] text-[48px] text-canvas sm:text-[72px] lg:text-[88px]">
+        </Reveal>
+        <Reveal delay={0.12} className="mt-16 sm:mt-24">
+          <p className="display max-w-[11ch] text-[52px] sm:text-[80px] lg:text-[100px]">
             Construimos operaciones comerciales.
           </p>
         </Reveal>
-      </Container>
+      </div>
     </section>
   );
 }

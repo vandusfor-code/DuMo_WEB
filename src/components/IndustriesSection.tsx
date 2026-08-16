@@ -1,4 +1,3 @@
-import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
 
 const industries = [
@@ -13,36 +12,26 @@ const industries = [
 
 export function IndustriesSection() {
   return (
-    <section className="border-t border-line py-20 sm:py-28">
-      <Container>
-        <div className="grid gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:gap-24">
-          <Reveal>
-            <h2 className="display max-w-[14ch] text-[36px] sm:text-[48px] lg:text-[52px]">
-              Un modelo comercial que puede adaptarse a distintas industrias.
-            </h2>
-            <p className="mt-7 max-w-[38ch] text-[17px] leading-8 text-ink-muted">
-              El modelo no depende de un operador ni de una categoría. Se
-              aplica donde exista un producto y la necesidad de conseguir
-              clientes.
-            </p>
-          </Reveal>
-
-          <Reveal delay={0.06}>
-            <ul>
-              {industries.map((industry, index) => (
-                <li
-                  key={industry}
-                  className={`py-4 text-[22px] tracking-[-0.03em] sm:text-[26px] ${
-                    index === 0 ? "" : "border-t border-line"
-                  }`}
-                >
-                  {industry}
-                </li>
-              ))}
-            </ul>
-          </Reveal>
-        </div>
-      </Container>
+    <section className="px-6 py-24 sm:px-8 sm:py-32 lg:px-14">
+      <div className="mx-auto grid w-full max-w-[1440px] gap-16 lg:grid-cols-[0.8fr_1.2fr] lg:items-start lg:gap-24">
+        <Reveal>
+          <h2 className="display max-w-[13ch] text-[36px] sm:text-[52px] lg:text-[60px]">
+            Un modelo que puede vender más que telecomunicaciones.
+          </h2>
+        </Reveal>
+        <Reveal delay={0.06}>
+          <ul>
+            {industries.map((industry) => (
+              <li key={industry}>
+                <div className="industry-row text-[26px] tracking-[-0.03em] sm:text-[34px]">
+                  <span>{industry}</span>
+                  <span className="mark" />
+                </div>
+              </li>
+            ))}
+          </ul>
+        </Reveal>
+      </div>
     </section>
   );
 }
