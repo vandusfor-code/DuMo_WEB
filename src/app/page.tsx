@@ -1,34 +1,26 @@
-import { HomeAutomation } from "@/components/home/Automation";
+import { HomeAcquisition } from "@/components/home/Acquisition";
+import { HomeAnalytics } from "@/components/home/Analytics";
 import { HomeClose } from "@/components/home/Close";
-import { HomeContrast } from "@/components/home/Contrast";
-import { HomeConversations } from "@/components/home/Conversations";
+import { HomeDifferentiator } from "@/components/home/Differentiator";
 import { HomeHero } from "@/components/home/Hero";
-import { HomeHowItWorks } from "@/components/home/HowItWorks";
 import { HomeIntelligence } from "@/components/home/Intelligence";
-import { HomeLeads } from "@/components/home/Leads";
+import { HomeLeadIdea } from "@/components/home/LeadIdea";
 import { HomeLiveOps } from "@/components/home/LiveOps";
-import { HomeMetrics } from "@/components/home/Metrics";
-import { HomeProblem } from "@/components/home/Problem";
-import { HomeProduct } from "@/components/home/Product";
-import { HomeProof } from "@/components/home/Proof";
-import { HomeSystem } from "@/components/home/System";
+import { HomeOperatingLayer } from "@/components/home/OperatingLayer";
+import { FollowTheLead } from "@/components/product/FollowTheLead";
 
 export default function Home() {
   return (
     <main>
       <HomeHero />
-      <HomeProof />
-      <HomeProblem />
-      <HomeSystem />
-      <HomeProduct />
-      <HomeLeads />
-      <HomeConversations />
+      <HomeLeadIdea />
+      <FollowTheLead />
+      <HomeOperatingLayer />
       <HomeIntelligence />
-      <HomeAutomation />
       <HomeLiveOps />
-      <HomeMetrics />
-      <HomeHowItWorks />
-      <HomeContrast />
+      <HomeAcquisition />
+      <HomeAnalytics />
+      <HomeDifferentiator />
       <HomeClose />
     </main>
   );

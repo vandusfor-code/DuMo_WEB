@@ -3,7 +3,7 @@ export const SITE_TAGLINE = "Commercial Operating System";
 export const SITE_HEADLINE = "La infraestructura detrás de cada venta.";
 
 export const SITE_DESCRIPTION =
-  "DuMo conecta leads, conversaciones, IA, asesores y ventas en una sola operación comercial.";
+  "DuMo conecta adquisición, conversaciones, inteligencia artificial y equipos comerciales en una sola operación.";
 
 export function getSiteUrl() {
   if (process.env.NEXT_PUBLIC_SITE_URL) {
@@ -23,7 +23,7 @@ export function getSiteUrl() {
 
 export const NAV_LINKS = [
   { href: "/#producto", label: "Producto" },
-  { href: "/#como-funciona", label: "Cómo funciona" },
+  { href: "/#follow", label: "Cómo funciona" },
   { href: "/#ia", label: "IA" },
   { href: "/#operacion", label: "Operación" },
 ] as const;

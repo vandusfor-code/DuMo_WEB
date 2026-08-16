@@ -33,7 +33,7 @@ export function HomeLiveOps() {
         </h2>
       </Reveal>
       <Reveal delay={0.08} className="mt-12">
-        <div className="panel p-5 sm:p-6">
+        <div className="dumo-frame p-5 sm:p-6">
           <div className="flex items-center gap-2 text-[12px] tracking-[0.16em] text-lime uppercase">
             <span className="live-dot" />
             Live

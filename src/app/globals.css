@@ -3,13 +3,12 @@
 :root {
   --bg: #050505;
   --bg-2: #080a09;
-  --surface: #101313;
-  --surface-2: #141817;
-  --line: #222725;
+  --surface: #0b0e0d;
+  --surface-2: #101413;
+  --line: #202522;
   --ink: #f5f7f6;
-  --muted: #8c9490;
+  --muted: #8a928e;
   --lime: #c8f54a;
-  --lime-dim: #8fb82e;
 }
 
 @theme inline {
@@ -21,7 +20,6 @@
   --color-ink: var(--ink);
   --color-muted: var(--muted);
   --color-lime: var(--lime);
-  --color-lime-dim: var(--lime-dim);
   --font-sans: var(--font-geist);
 }
 
@@ -42,7 +40,7 @@ body {
 }
 
 ::selection {
-  background: color-mix(in srgb, var(--lime) 28%, black);
+  background: color-mix(in srgb, var(--lime) 22%, black);
   color: var(--ink);
 }
 
@@ -81,7 +79,7 @@ body {
 .label {
   font-size: 11px;
   font-weight: 500;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--muted);
 }
@@ -89,7 +87,7 @@ body {
 .shell {
   margin-inline: auto;
   width: 100%;
-  max-width: 1280px;
+  max-width: 1320px;
   padding-inline: 1.5rem;
 }
 
@@ -105,7 +103,7 @@ body {
   }
 }
 
-.panel {
+.dumo-frame {
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: 16px;
@@ -116,7 +114,7 @@ body {
   height: 6px;
   border-radius: 999px;
   background: var(--lime);
-  box-shadow: 0 0 0 0 rgba(200, 245, 74, 0.55);
+  box-shadow: 0 0 0 0 rgba(200, 245, 74, 0.5);
   animation: pulse-live 1.8s ease-out infinite;
 }
 
@@ -124,23 +122,20 @@ body {
   70% {
     box-shadow: 0 0 0 6px rgba(200, 245, 74, 0);
   }
-  100% {
-    box-shadow: 0 0 0 0 rgba(200, 245, 74, 0);
-  }
 }
 
-@keyframes draw-curve {
+@keyframes curve-flow {
   from {
-    stroke-dashoffset: 240;
+    stroke-dashoffset: 180;
   }
   to {
     stroke-dashoffset: 0;
   }
 }
 
-.curve-draw {
-  stroke-dasharray: 240;
-  animation: draw-curve 1.6s ease forwards;
+.curve-flow {
+  stroke-dasharray: 8 10;
+  animation: curve-flow 1.4s linear infinite;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -149,7 +144,7 @@ body {
   }
 
   .live-dot,
-  .curve-draw {
+  .curve-flow {
     animation: none;
   }
 

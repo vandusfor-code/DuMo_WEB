@@ -21,7 +21,7 @@ export function HeroDashboard() {
   }, [reduceMotion]);
 
   return (
-    <div className="panel relative overflow-hidden shadow-[0_30px_80px_-40px_rgba(200,245,74,0.18)]">
+    <div className="dumo-frame relative overflow-hidden">
       <div className="pointer-events-none absolute -top-24 right-10 h-40 w-40 rounded-full bg-lime/10 blur-3xl" />
       <div className="flex items-center justify-between border-b border-line px-4 py-3">
         <p className="text-[13px] font-medium">DuMo</p>
@@ -48,7 +48,7 @@ export function HeroDashboard() {
         <div className="p-4 sm:p-5">
           <p className="text-[13px] text-muted">Buenos días</p>
           <p className="mt-1 text-[15px] font-medium">Rendimiento de la operación</p>
-          <p className="caption mt-1 text-[11px] text-muted">Representación de la plataforma</p>
+          <p className="mt-1 text-[11px] text-muted">Representación de la plataforma</p>
           <div className="mt-5 grid grid-cols-3 gap-3">
             {[
               ["2.483", "Leads"],
